@@ -28,3 +28,14 @@ print(f"Feature engineered dataset: {df_with_rul.count()} rows, {len(df_with_rul
 df_with_rul.select("engine_id", "cycle", "RUL", "failure_imminent").show(10)
 
 df_with_rul.write.mode("overwrite").saveAsTable("avionics_features")
+
+# Select a manageable subset of columns for the Snowflake demo
+sample_df = df_with_rul.select(
+    "engine_id", "cycle", "setting1", "setting2",
+    "sensor_2", "sensor_3", "sensor_4", "sensor_7",
+    "RUL", "failure_imminent"
+).limit(2000)
+
+sample_pandas = sample_df.toPandas()
+sample_pandas.to_csv("/Volumes/workspace/default/sensor_data/avionics_sample.csv", index=False)
+print(f"Sample exported: {sample_pandas.shape[0]} rows, {sample_pandas.shape[1]} columns")
