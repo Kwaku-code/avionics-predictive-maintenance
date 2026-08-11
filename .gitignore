@@ -5,8 +5,12 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+#Data
 data/*.txt
 data/*.csv
+!data/avionics_sample.csv
+
 *.log
 .ipynb_checkpoints/
 mlruns/
