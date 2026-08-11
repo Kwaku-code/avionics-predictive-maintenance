@@ -6,10 +6,15 @@ __pycache__/
 .idea/
 .DS_Store
 
-#Data
+# Data
 data/*.txt
 data/*.csv
 !data/avionics_sample.csv
+
+# dbt
+dbt/avionics_dbt/target/
+dbt/avionics_dbt/dbt_packages/
+dbt/avionics_dbt/logs/
 
 *.log
 .ipynb_checkpoints/
