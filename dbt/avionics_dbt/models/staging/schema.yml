@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_engine_sensors
+    columns:
+      - name: engine_id
+        tests:
+          - not_null
+      - name: rul
+        tests:
+          - not_null
