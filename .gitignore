@@ -19,3 +19,5 @@ dbt/avionics_dbt/logs/
 *.log
 .ipynb_checkpoints/
 mlruns/
+mlflow.db
+*.db
